@@ -3,7 +3,7 @@ from django.conf import settings
 import os
 from PIL import Image
 from django.utils.text import slugify
-
+from utils import utils
 class Produto(models.Model):
     nome = models.CharField(max_length=255)
     descricao_curta = models.TextField(max_length=255)
@@ -22,11 +22,13 @@ class Produto(models.Model):
     )
 
     def preco_formatado(self):
-        return f'R$ {self.preco_marketing:.2f}'.replace('.', ',')
+        return utils.formata_preco(self.preco_marketing)
+
     preco_formatado.short_description = 'Preço'
 
     def preco_promo_formatado(self):
-        return f'R$ {self.preco_marketing_promocional:.2f}'.replace('.', ',')
+        return utils.formata_preco(self.preco_marketing_promocional)
+
     preco_promo_formatado.short_description = 'Preço promo'
 
     @staticmethod
