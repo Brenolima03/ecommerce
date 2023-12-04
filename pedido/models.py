@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
 class Pedido(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     total = models.FloatField()
@@ -20,7 +19,6 @@ class Pedido(models.Model):
 
     def __str__(self):
         return f'Pedido N. {self.pk}'
-
 
 class ItemPedido(models.Model):
     pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)

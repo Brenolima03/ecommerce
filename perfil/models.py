@@ -1,10 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.forms import ValidationError
-
 import re
 from utils.validacpf import valida_cpf
-
 
 class Perfil(models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE,

@@ -3,14 +3,14 @@
 
 <head>
     {% include 'parciais/_head.html' %}
-    <title>{% block titutlo %}{% endblock %}Hello, world!</title>
+    <title>{% block titutlo %}E-Commerce{% endblock %}</title>
 </head>
 
 <body>
     {% include 'parciais/_nav.html' %}
 
     <main class="container mt-4 mb-4">
-        {% include "parciais/_messages.html" %}
+        {% include 'parciais/_messages.html' %}
         {% block conteudo %}{% endblock %}
     </main>
 

@@ -5,7 +5,6 @@ from django.db import models
 from django.utils.text import slugify
 from utils import utils
 
-
 class Produto(models.Model):
     nome = models.CharField(max_length=255)
     descricao_curta = models.TextField(max_length=255)
@@ -66,7 +65,6 @@ class Produto(models.Model):
 
     def __str__(self):
         return self.nome
-
 
 class Variacao(models.Model):
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
