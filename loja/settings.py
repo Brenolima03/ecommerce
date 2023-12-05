@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'produto',
     'pedido',
     'perfil',
+    'crispy_forms',
+    'crispy_bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +49,8 @@ INSTALLED_APPS = [
     # TODO: Remover debug toolbar
     'debug_toolbar',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -139,7 +143,6 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 
 MESSAGE_TAGS = {
     constants.DEBUG: 'alert-info',
