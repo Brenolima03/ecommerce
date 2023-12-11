@@ -23,15 +23,11 @@ class Busca(ListaProdutos):
         if not termo:
             return qs
 
-        self.request.session['termo'] = termo
-
         qs = qs.filter(
             Q(nome__icontains=termo) |
             Q(descricao_curta__icontains=termo) |
             Q(descricao_longa__icontains=termo)
         )
-
-        self.request.session.save()
         return qs
 
 class DetalheProduto(DetailView):
