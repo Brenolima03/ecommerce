@@ -36,18 +36,12 @@ INSTALLED_APPS = [
     'pedido',
     'perfil',
     'crispy_forms',
-    'crispy_bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-
-
-    # TODO: Remover debug toolbar
-    'debug_toolbar',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -60,9 +54,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-    # TODO: Remover debug toolbar
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'loja.urls'
@@ -125,7 +116,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LANGUAGE_CODE = 'pt-BR'
 
-TIME_ZONE = 'America/Sao_Paulo'
+TIME_ZONE = 'America/Campo_Grande'
 
 USE_I18N = True
 
@@ -162,10 +153,3 @@ SESSION_SAVE_EVERY_REQUEST = False
 
 # Serializer - Padrão JSON
 # SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
-
-# TODO: Remover debug toolbar
-INTERNAL_IPS = [
-    # ...
-    '127.0.0.1',
-    # ...
-]
