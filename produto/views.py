@@ -5,6 +5,7 @@ from django.views import View
 from django.http import HttpResponse
 from django.contrib import messages
 from django.db.models import Q
+
 from . import models
 from perfil.models import Perfil
 
@@ -23,11 +24,15 @@ class Busca(ListaProdutos):
         if not termo:
             return qs
 
+        self.request.session['termo'] = termo
+
         qs = qs.filter(
             Q(nome__icontains=termo) |
             Q(descricao_curta__icontains=termo) |
             Q(descricao_longa__icontains=termo)
         )
+
+        self.request.session.save()
         return qs
 
 class DetalheProduto(DetailView):
@@ -161,7 +166,7 @@ class Carrinho(View):
         }
 
         return render(self.request, 'produto/carrinho.html', contexto)
-
+    
 class ResumoDaCompra(View):
     def get(self, *args, **kwargs):
         if not self.request.user.is_authenticated:

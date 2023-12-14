@@ -19,7 +19,6 @@
                         <th scope="col">Mais detalhes</th>
                     </tr>
 
-
                     {% for pedido in pedidos %}
                         <tr>
                             <th scope="row">{{ pedido }}</td>
@@ -33,9 +32,13 @@
                             </td>
                         </tr>
                     {% endfor %}
+
+
                 </table>
             </div>
         </div>
     </div>
+
     {% include 'parciais/_pagination.html' %}
+
 {% endblock %}
